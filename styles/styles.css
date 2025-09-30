@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+}
+.navbar {
+  width: 250px;
+  height: 100vh;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  transition: transform 0.3s ease;
+}
+
+.navbar h2 {
+  margin-bottom: 20px;
+}
+.navbar ul {
+  list-style: none;
+}
+.navbar ul li {
+  margin: 15px 0;
+}
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar.hidden {
+  transform: translateX(-250px);
+}
+
+.caja-principal {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+  width: calc(100% - 250px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  background-color: #ecf0f1;
+}
+
+#BtnMenu {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.caja-principal.expanded {
+  margin-left: 0;
+  width: 100%;
+}
+
+.boxproductos {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+#caja2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.boxproductos:hover {
+  transform: translateY(-5px);
+}
+
+.boxproductos img {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.boxproductos h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.boxproductos p {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+.boxproductos button {
+  background-color: #3027ae;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#cajaformulario {
+  max-width: 100%;
+  margin: 0 auto;
+  background: slategrey;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#formulario {
+  display: flex;
+  flex-direction: wrap;
+  gap: 10px;
+}
+.h2comentarios {
+  margin-bottom: 10px;
+  color: #3027ae;
+  text-align: center;
+}
+
+#btnVerComentarios {
+  background-color: #3027ae;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  align-items: center;
+  margin: 0 auto;
+}

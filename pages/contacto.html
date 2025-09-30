@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h2>Tienda</h2>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="../pages/productos.html">Productos</a></li>
+        <li><a href="">Carrito</a></li>
+        <!-- Carrito todavia sin agregarse -->
+        <li><a href="../pages/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="caja-principal">
+      <button id="BtnMenu"># Menu</button>
+      <div id="cajaformulario">
+        <h1>Contacto</h1>
+        <form id="formulario">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+
+          <button type="button" id="btnComentario">Enviar Comentario</button>
+        </form>
+      </div>
+      <div id="aviso"></div>
+
+      <div>
+        <h2 class="h2comentarios">Comentarios:</h2>
+        <div>
+          <button type="button" id="btnVerComentarios">Ver Comentarios</button>
+        </div>
+        <div id="div-comentarios"></div>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/comentarios.js"></script>
+  </body>
+</html>
