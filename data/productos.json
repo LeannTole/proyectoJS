@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nike Infinity",
+    "descripcion": "Zapatillas de Golf para Hombre (Anchos)",
+    "precio": 149999,
+    "imagen": "../images/1576561-1200-1200.webp"
+  },
+  {
+    "id": 2,
+    "nombre": "Nike Pegasus 41",
+    "descripcion": "Zapatillas de Running para Mujer",
+    "precio": 229999,
+    "imagen": "../images/zapa2.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "Nike Air Max 95 OG",
+    "descripcion": "Zapatillas de Moda para Hombre",
+    "precio": 229999,
+    "imagen": "../images/nikeAirMax95.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Puma PWR Hybrid",
+    "descripcion": "Zapatillas de entrenamiento unisex",
+    "precio": 129999,
+    "imagen": "../images/pumapwr.avif"
+  },
+  {
+    "id": 5,
+    "nombre": "Puma Speedcat Cuero unisex",
+    "descripcion": "Zapatillas de entrenamiento unisex",
+    "precio": 119999,
+    "imagen": "../images/pumaspeedcat.avif"
+  }
+]

@@ -7,7 +7,10 @@
 
 body {
   display: flex;
+  flex-direction: row;
+  min-height: 100vh;
 }
+
 .navbar {
   width: 250px;
   height: 100vh;
@@ -16,27 +19,34 @@ body {
   padding: 20px;
   position: fixed;
   transition: transform 0.3s ease;
+  z-index: 10;
 }
 
 .navbar h2 {
   margin-bottom: 20px;
+  font-size: 22px;
 }
+
 .navbar ul {
   list-style: none;
 }
+
 .navbar ul li {
   margin: 15px 0;
 }
+
 .navbar ul li a {
   color: white;
   text-decoration: none;
+  font-size: 16px;
 }
 
 .navbar.hidden {
   transform: translateX(-250px);
 }
 
-.caja-principal {
+.caja-principal,
+.carrito-container {
   margin-left: 250px;
   padding: 20px;
   flex-grow: 1;
@@ -56,9 +66,11 @@ body {
   margin-bottom: 20px;
 }
 
-.caja-principal.expanded {
-  margin-left: 0;
-  width: 100%;
+#caja2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
 }
 
 .boxproductos {
@@ -72,12 +84,6 @@ body {
   text-align: center;
   transition: transform 0.2s ease;
 }
-#caja2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
 
 .boxproductos:hover {
   transform: translateY(-5px);
@@ -88,7 +94,7 @@ body {
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
-  align-items: center;
+  align-self: center;
 }
 
 .boxproductos h2 {
@@ -102,6 +108,7 @@ body {
   color: #555;
   margin: 10px 0;
 }
+
 .boxproductos button {
   background-color: #3027ae;
   color: white;
@@ -110,43 +117,154 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
   width: 200px;
-  align-items: center;
   margin: 0 auto;
+  transition: background-color 0.3s ease;
 }
 
-#cajaformulario {
-  max-width: 100%;
-  margin: 0 auto;
-  background: slategrey;
-  padding: 20px;
+.boxproductos button:hover {
+  background-color: #3b32d3;
+}
+
+.carrito-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+#carrito-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.item-carrito {
+  background: white;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-#formulario {
-  display: flex;
-  flex-direction: wrap;
-  gap: 10px;
-}
-.h2comentarios {
-  margin-bottom: 10px;
-  color: #3027ae;
   text-align: center;
 }
 
-#btnVerComentarios {
+.item-carrito img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 60%;
+}
+
+.item-carrito h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.item-carrito p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.item-carrito button {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item-carrito button:hover {
+  background-color: #e74c3c;
+}
+
+#total {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+#vaciar,
+#comprar {
   background-color: #3027ae;
   color: white;
   border: none;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 12px 18px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  margin: 10px;
+  display: inline-block;
   transition: background-color 0.3s ease;
-  width: 200px;
-  align-items: center;
-  margin: 0 auto;
+}
+
+#vaciar:hover,
+#comprar:hover {
+  background-color: #3b32d3;
+}
+
+.caja-principal.expanded,
+.carrito-container.expanded {
+  margin-left: 0;
+  width: 100%;
+}
+
+/*  Se agrega responsive a la pagina  */
+@media (max-width: 1024px) {
+  .navbar {
+    width: 200px;
+  }
+  .caja-principal,
+  .carrito-container {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .navbar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .caja-principal,
+  .carrito-container {
+    margin-left: 0;
+    width: 100%;
+  }
+  #caja2,
+  #carrito-items {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .boxproductos button,
+  .item-carrito button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #caja2,
+  #carrito-items {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .boxproductos img,
+  .item-carrito img {
+    width: 80%;
+  }
+  .boxproductos h2,
+  .item-carrito h3 {
+    font-size: 16px;
+  }
+  .boxproductos p,
+  .item-carrito p {
+    font-size: 12px;
+  }
+  #total {
+    font-size: 20px;
+  }
 }

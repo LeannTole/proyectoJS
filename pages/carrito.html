@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
@@ -18,14 +18,18 @@
     </nav>
 
     <div class="caja-principal">
-      <button id="BtnMenu"># Menu</button>
-      <h1>Nuestros Productos!</h1>
-      <div id="caja2"></div>
+      <div class="carrito-container">
+        <button id="BtnMenu"># Menu</button>
+        <h1>Tu carrito</h1>
+        <div id="carrito-items"></div>
+        <h2>Total: <span id="total">$0</span></h2>
+        <button id="vaciar">Vaciar carrito</button>
+        <button id="comprar">Finalizar compra</button>
+      </div>
     </div>
-
-    <script src="../js/zapatillas.js"></script>
-    <script src="../js/main.js"></script>
     <!-- script para uso de sweet alert   -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>
